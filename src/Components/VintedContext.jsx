@@ -8,23 +8,14 @@ export const VintedContext = createContext();
 
 const VINTED_NEWS_URL = "https://in3.dev/vinted/api/news/";
 const PRODUCTS_URL = "https://in3.dev/vinted/api/products/";
+const PRODUCTS_CATS_URL = "https://in3.dev/vinted/api/cats/all";
+const USERS_URL = "https://in3.dev/vinted/api/cats/all";
 
 export const VintedProvider = ({ children }) => {
    const [vinted, dispatchVinted] = useReducer(vintedReducer, null);
    const [productIDs, setProductIDs] = useState(null);
+   const [cats, setCats] = useState(null);
 
-   //    fetch news data from url
-   //    useEffect(() => {
-   //       axios
-   //          .get(VINTED_NEWS_URL)
-   //          .then((res) => {
-   //             console.log(res.data);
-   //             dispatchVinted(loadFromServer(res.data));
-   //          })
-   //          .catch((err) => console.log(err));
-   //    }, []);
-
-   //    fetch news data from url, to get product ID's
    useEffect(() => {
       axios
          .get(VINTED_NEWS_URL)
@@ -55,11 +46,23 @@ export const VintedProvider = ({ children }) => {
       }
    }, [productIDs]);
 
+   useEffect(() => {
+      axios
+         .get(PRODUCTS_CATS_URL)
+         .then((res) => {
+            console.log(res.data);
+            setCats(res.data);
+         })
+         .catch((err) => console.log(err));
+   }, []);
+
    return (
       <VintedContext.Provider
          value={{
             vinted,
             dispatchVinted,
+            cats,
+            setCats,
          }}
       >
          {children}
