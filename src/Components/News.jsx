@@ -3,5 +3,13 @@ import { VintedContext } from "./VintedContext";
 
 export const News = () => {
    const { vinted } = useContext(VintedContext);
-   return <div>News</div>;
+   console.log(vinted);
+
+   return (
+      <div>
+         {vinted.map((vint) =>
+            vint.show ? <div key={vint.id}>{vint.title}</div> : null
+         )}
+      </div>
+   );
 };

@@ -29,7 +29,7 @@ export const VintedProvider = ({ children }) => {
       axios
          .get(VINTED_NEWS_URL)
          .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             setProductIDs(res.data);
          })
          .catch((err) => console.log(err));
@@ -49,7 +49,7 @@ export const VintedProvider = ({ children }) => {
             .then((dataArray) => {
                // dataArray is an array of responses for each product ID
                console.log(dataArray);
-               //    dispatchVinted(loadFromServer(dataArray)); // assuming loadFromServer can handle an array of data
+               dispatchVinted(loadFromServer(dataArray)); // assuming loadFromServer can handle an array of data
             })
             .catch((error) => console.error(error));
       }
