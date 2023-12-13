@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.new {
+   @apply border-2
+    border-sky-200 
+    rounded-xl 
+    shadow-md flex flex-col justify-between items-center
+    p-4
+    hover:bg-gradient-to-b hover:from-zinc-50 hover:to-sky-50
+    hover:shadow-md 
+    bg-gradient-to-t from-zinc-50 to-sky-50
+    hover:cursor-pointer;
+   height: 600px;
+   width: 350px;
+}

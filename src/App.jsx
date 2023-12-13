@@ -6,7 +6,7 @@ import { VintedProvider } from "./Components/VintedContext";
 function App() {
    return (
       <VintedProvider>
-         <div className="container mx-auto border p-8">
+         <div className="container mx-auto py-12">
             {/* <Loader /> */}
             <Layout />
          </div>
