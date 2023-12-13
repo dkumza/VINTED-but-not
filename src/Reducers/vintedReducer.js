@@ -9,6 +9,10 @@ export const vintedReducer = (state, action) => {
             ...vintedID,
             show: true,
          })));
+      case types.USERS_FROM_SERVER:
+         return (prevState = action.payload.map((users) => ({
+            ...users,
+         })));
       default:
    }
 

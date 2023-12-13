@@ -6,3 +6,10 @@ export function loadFromServer(books) {
       payload: books,
    };
 }
+
+export function loadUsersFromServer(users) {
+   return {
+      type: types.USERS_FROM_SERVER,
+      payload: users,
+   };
+}

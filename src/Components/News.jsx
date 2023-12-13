@@ -4,7 +4,7 @@ import { New } from "./New";
 
 export const News = () => {
    const { vinted } = useContext(VintedContext);
-   console.log(vinted);
+   // console.log(vinted);
 
    return (
       <div className="flex flex-wrap gap-4 items-center justify-center">
