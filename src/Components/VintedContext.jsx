@@ -30,18 +30,16 @@ export const VintedProvider = ({ children }) => {
 
    useEffect(() => {
       if (productIDs) {
-         Promise.all(
-            productIDs.map((product) =>
-               axios.get(PRODUCTS_URL + product.id).then((res) => {
-                  return res.data;
+         let responses = [];
+         productIDs.map((product) => {
+            axios
+               .get(PRODUCTS_URL + product.id)
+               .then((res) => {
+                  responses.push(res.data);
+                  dispatchVinted(loadFromServer(responses));
                })
-            )
-         )
-            .then((dataArray) => {
-               // array of responses for each product ID
-               dispatchVinted(loadFromServer(dataArray));
-            })
-            .catch((error) => console.error(error));
+               .catch((error) => console.error(error));
+         });
       }
    }, [productIDs]);
 
