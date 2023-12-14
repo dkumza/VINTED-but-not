@@ -1,6 +1,6 @@
 export const Loader = () => {
    return (
-      <div className="min-h-full">
+      <div className="min-h-full md:py-36">
          <div className="flex gap-3 justify-center min-h-full items-center">
             <span className="sr-only">Loading...</span>
             <div className="h-8 w-8 bg-lime-100 rounded-full animate-bounce  [animation-delay:-0.3s]"></div>
