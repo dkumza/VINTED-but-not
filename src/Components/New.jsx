@@ -9,13 +9,13 @@ export const New = ({ vint }) => {
       <div className="new">
          <div className="w-full flex relative ">
             {cats && (
-               <div className="book-id bg-amber-400 text-sm font-semibold text-white shadow py-1 px-2 rounded absolute  -top-5 -right-5 h-8">
+               <div className="book-id bg-yellow-400 text-sm font-semibold text-white shadow py-1 px-2 rounded absolute  -top-5 -right-5 h-8">
                   {cats.find((c) => c.id === vint.cat)?.title}
                </div>
             )}
 
             {users && (
-               <div className="book-id bg-sky-400 text-sm font-semibold text-white shadow py-1 px-2 rounded absolute  -top-5 -left-5 flex h-8 gap-2 items-center">
+               <div className="book-id bg-green-500 text-sm font-semibold text-white shadow py-1 px-2 rounded absolute  -top-5 -left-5 flex h-8 gap-2 items-center">
                   {(() => {
                      const user = users.find((u) => u.id === vint.user);
                      return user?.avatar ? (

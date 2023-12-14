@@ -6,7 +6,10 @@ import { VintedProvider } from "./Components/VintedContext";
 function App() {
    return (
       <VintedProvider>
-         <div className="container mx-auto py-12">
+         <div className="container mx-auto flex flex-col items-center py-4">
+            <h1 className="font-extrabold text-transparent text-6xl bg-clip-text bg-gradient-to-l from-lime-400 to-green-600 mb-16">
+               VINCTED
+            </h1>
             {/* <Loader /> */}
             <Layout />
          </div>
